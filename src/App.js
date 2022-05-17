@@ -1,25 +1,23 @@
-import logo from './logo.svg';
-import './App.css';
+import logo from './logo.svg'
+import { useState } from 'react'
+import './App.css'
 
 function App() {
+  const [isCool, setIsCool] = useState(false)
+  const COOL_NAMES = ['james']
+
+  const changeHandler = e => {
+    const name = e.target.value
+
+    setIsCool(COOL_NAMES.includes(name))
+  }
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <input onChange={changeHandler} />
+      <h1>Are they cool? {isCool ? 'yes' : 'no'}</h1>
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
