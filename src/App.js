@@ -4,7 +4,7 @@ import './App.css'
 
 function App() {
   const [isCool, setIsCool] = useState(false)
-  const COOL_NAMES = ['james', 'katie']
+  const COOL_NAMES = ['james', 'katie','Marwa']
 
   const changeHandler = e => {
     const name = e.target.value
